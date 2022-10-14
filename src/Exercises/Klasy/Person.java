@@ -5,4 +5,7 @@ public class Person {
     String lastName;
     String pesel;
 
+    Adress registeredAddress;
+    Adress livingAddress;
+
 }

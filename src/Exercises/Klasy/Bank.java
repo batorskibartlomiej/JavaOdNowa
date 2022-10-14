@@ -7,6 +7,15 @@ public class Bank {
         person.lastName="Kowalski";
         person.pesel="840315044";
 
+        Adress adress1 = new Adress();
+        adress1.city="Warszawa";
+        adress1.home=5;
+        adress1.street="Ponarska";
+        adress1.postalCode="03-890";
+
+        person.livingAddress= adress1;
+        person.registeredAddress=adress1;
+
         BankAccount account1= new BankAccount();
         account1.owner=person;
         account1.balance=10_000;
@@ -20,6 +29,7 @@ public class Bank {
         System.out.println("Osoba:");
         System.out.println(person.firstName + " " + person.lastName + " " + person.pesel);
         System.out.println("posiada konto bankowe z kwotą: " + account1.balance);
+        System.out.println("mieszka w miejscowości: " + person.livingAddress.city+" "+person.livingAddress.street);
         System.out.println("oraz kredyt na kwotę: " + credit1.cashBorrowed);
 
 
