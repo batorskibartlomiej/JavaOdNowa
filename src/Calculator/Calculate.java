@@ -14,6 +14,7 @@ public class Calculate {
         System.out.println("dodoawanie");
         System.out.println(calc.add(x,y)) ;
         System.out.println("testBrancha");
+        System.out.println("po mergu");
 
     }
 
