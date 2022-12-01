@@ -11,7 +11,7 @@ public class Calculate {
         Calculator calc = new Calculator(x, y);
         System.out.println("dodoawanie");
         System.out.println(calc.add(x,y)) ;
-        System.out.println("test");
+
     }
 
 
