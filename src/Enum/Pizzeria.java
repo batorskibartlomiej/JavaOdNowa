@@ -8,6 +8,8 @@ public class Pizzeria {
     public static void main(String[] args) {
         System.out.println("Dostepne pizze:");
 
+        Pizza[] values = Pizza.values();
+
         for (Pizza p : Pizza.values()) {
             System.out.println(p);
 
