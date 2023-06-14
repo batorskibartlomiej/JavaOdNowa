@@ -14,12 +14,33 @@ public class PersonDatabase {
             throw new NullPointerException("person cannot be null");
         }
         if (emptyPlace == people.length) {
-                Arrays.copyOf(people, people.length * 2);
+                people=Arrays.copyOf(people, people.length * 2);
         }
 
         people[emptyPlace] = person;
         emptyPlace++;
         }
+
+
+        void remove(Person person){
+            if (person == null)
+                throw new NullPointerException("person cannot be null");
+            final int notFound=-1;
+                int foundIndex= notFound;
+                for (int i = 0; i < emptyPlace && foundIndex==notFound; i++) {
+                    if(person.equals(people[i])){
+                        foundIndex =i;
+                    }
+
+                }
+                if(foundIndex != notFound){
+                    System.arraycopy(people, foundIndex +1,people, foundIndex, people.length - foundIndex-1);
+                    emptyPlace--;
+                    people[emptyPlace]=null;
+                }
+
+            }
+
 
 
         Person get(int index){
@@ -28,6 +49,22 @@ public class PersonDatabase {
         return people[index];
         }
 
+        int size(){
+        return emptyPlace;
+        }
 
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PersonDataBase size: ");
+        sb.append(emptyPlace);
+        sb.append("\n");
+        for (int i = 0; i < emptyPlace; i++) {
+            sb.append(people[i].toString());
+            sb.append("\n");
+
+        }return  sb.toString();
     }
+}
 
