@@ -10,7 +10,5 @@ public class StreamsZad {
                  .limit(10)
                  .map(x->x*3)
                  .forEach(System.out::println);
-
-
     }
 }
